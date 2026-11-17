@@ -102,6 +102,74 @@
     });
   }
 
+  /* ---------- Custom cursor + floating "View" badge + spotlight ---------- */
+  if (canHover) {
+    // trailing ring + instant dot
+    const dot = document.createElement("div");
+    dot.className = "cursor-dot";
+    const ring = document.createElement("div");
+    ring.className = "cursor-ring";
+    document.body.append(dot, ring);
+    document.body.classList.add("cursor-active");
+
+    let mx = -100, my = -100, rx = -100, ry = -100;
+    document.addEventListener("mousemove", (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+    });
+    document.addEventListener("mouseleave", () => document.body.classList.remove("cursor-active"));
+    document.addEventListener("mouseenter", () => document.body.classList.add("cursor-active"));
+
+    const HOVERABLE = "a, button, input, textarea, label, .work-card, .award-card, .skill-card, .pills li, .timeline__body";
+    let hovered = null;
+    document.addEventListener("mouseover", (e) => {
+      const el = e.target.closest ? e.target.closest(HOVERABLE) : null;
+      if (el !== hovered) {
+        hovered = el;
+        ring.classList.toggle("is-hover", !!el);
+      }
+    });
+
+    (function follow() {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      dot.style.transform = "translate3d(" + mx + "px," + my + "px,0)";
+      ring.style.transform = "translate3d(" + rx + "px," + ry + "px,0)";
+      requestAnimationFrame(follow);
+    })();
+
+    // "View ↗" badge that trails the cursor over work cards
+    const badge = document.createElement("div");
+    badge.className = "work-badge";
+    badge.textContent = "View ↗";
+    document.body.appendChild(badge);
+
+    document.querySelectorAll(".work-card").forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (((e.clientX - r.left) / r.width) * 100).toFixed(2) + "%");
+        card.style.setProperty("--my", (((e.clientY - r.top) / r.height) * 100).toFixed(2) + "%");
+        badge.style.transform =
+          "translate3d(" + e.clientX + "px," + e.clientY + "px,0) translate(-50%,-50%)";
+      });
+      card.addEventListener("mouseenter", () => badge.classList.add("show"));
+      card.addEventListener("mouseleave", () => badge.classList.remove("show"));
+    });
+
+    // magnetic pull on buttons
+    document.querySelectorAll(".btn").forEach((btn) => {
+      btn.addEventListener("mousemove", (e) => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width / 2;
+        const y = e.clientY - r.top - r.height / 2;
+        btn.style.transform = "translate(" + (x * 0.22).toFixed(1) + "px," + (y * 0.3).toFixed(1) + "px)";
+      });
+      btn.addEventListener("mouseleave", () => {
+        btn.style.transform = "";
+      });
+    });
+  }
+
   /* ---------- Contact form (FormSubmit → email inbox) ---------- */
   const form = document.getElementById("contactForm");
   if (form) {

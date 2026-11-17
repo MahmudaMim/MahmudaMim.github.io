@@ -394,34 +394,6 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ============================================================
-   Marquee
-   ============================================================ */
-.marquee {
-  border-block: 1px solid var(--line);
-  background: var(--bg-soft);
-  overflow: hidden;
-  padding: 18px 0;
-}
-.marquee__track {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-  width: max-content;
-  animation: scroll 34s linear infinite;
-}
-.marquee__track span {
-  font-family: var(--font-display);
-  font-size: clamp(17px, 2.4vw, 24px);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  white-space: nowrap;
-}
-.marquee__track i { color: var(--accent); font-style: normal; font-size: 15px; }
-@keyframes scroll { to { transform: translateX(-50%); } }
-.marquee:hover .marquee__track { animation-play-state: paused; }
-
-/* ============================================================
    Sections
    ============================================================ */
 .section { padding: clamp(80px, 11vw, 130px) 0; }
@@ -492,9 +464,12 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 .work-card::after {
   content: "";
   position: absolute;
-  top: -40%; right: -30%;
-  width: 60%; height: 80%;
-  background: radial-gradient(circle, rgba(255, 106, 61, 0.16), transparent 65%);
+  inset: 0;
+  background: radial-gradient(
+    460px circle at var(--mx, 75%) var(--my, 15%),
+    rgba(255, 106, 61, 0.17),
+    transparent 62%
+  );
   opacity: 0;
   transition: opacity 0.4s;
   pointer-events: none;
@@ -522,7 +497,9 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px);
   background-size: 22px 22px;
   opacity: 0.5;
+  transition: background-position 0.7s var(--ease);
 }
+.work-card:hover .work-card__visual::before { background-position: 11px 11px; }
 .work-card__visual--a { background: linear-gradient(135deg, #2b1f4d, #4b38a0); }
 .work-card__visual--b { background: linear-gradient(135deg, #4d2415, #b04a20); }
 .work-card__visual--c { background: linear-gradient(135deg, #143d33, #1f8f6f); }
@@ -1082,6 +1059,74 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   transition: transform 0.3s var(--ease);
 }
 .footer__top:hover { transform: translateY(-3px); }
+
+/* ============================================================
+   Custom cursor + hover badge (desktop, fine pointer only)
+   ============================================================ */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+body.cursor-active .cursor-dot,
+body.cursor-active .cursor-ring { opacity: 1; }
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(214, 255, 62, 0.55);
+  display: grid;
+  place-items: center;
+  transition: opacity 0.3s, width 0.3s var(--ease), height 0.3s var(--ease),
+    margin 0.3s var(--ease), background 0.3s, border-color 0.3s;
+}
+.cursor-ring.is-hover {
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
+  background: rgba(214, 255, 62, 0.12);
+  border-color: var(--accent-2);
+}
+
+/* hide the native cursor only while the custom one is active */
+body.cursor-active * { cursor: none; }
+body.cursor-active input,
+body.cursor-active textarea { cursor: text; }
+
+.work-badge {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: var(--accent-2);
+  color: #131313;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  opacity: 0;
+  scale: 0;
+  transform: translate3d(-250px, -250px, 0);
+  transition: opacity 0.25s var(--ease), scale 0.3s var(--ease);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+.work-badge.show { opacity: 1; scale: 1; }
 
 /* ============================================================
    Reveal animation
