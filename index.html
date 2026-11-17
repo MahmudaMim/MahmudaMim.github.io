@@ -483,23 +483,70 @@
           <span class="contact__spark" aria-hidden="true">🚀</span>
         </h2>
 
-        <div class="contact__actions reveal">
-          <a class="btn btn--accent btn--big" href="mailto:mahmudauiux@gmail.com">
-            mahmudauiux@gmail.com
-          </a>
-          <a class="btn btn--ghost btn--big" href="tel:+08801862697337">
-            +088 01862697337
-          </a>
-        </div>
+        <div class="contact__grid">
+          <div class="contact__form-card reveal">
+            <span class="sticker sticker--contact">Available for full-time &amp; freelance 🎉</span>
+            <p class="contact__form-intro">
+              Got a product, brand or print project in mind? Drop me a message —
+              it lands straight in my inbox.
+            </p>
 
-        <div class="contact__card reveal">
-          <span class="sticker sticker--contact">Available for full-time &amp; freelance 🎉</span>
-          <p>Got a product, brand or print project in mind? I'd love to hear about it.</p>
-          <ul class="contact__socials">
-            <li><a href="https://www.linkedin.com/in/mahmuda-sultana-graphicuiuxdesigner" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-            <li><a href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">Behance ↗</a></li>
-            <li><a href="https://www.fiverr.com/mahmudamim311" target="_blank" rel="noopener">Fiverr ↗</a></li>
-          </ul>
+            <form id="contactForm" class="cform"
+                  action="https://formsubmit.co/mahmudauiux@gmail.com"
+                  method="POST">
+              <!-- FormSubmit config -->
+              <input type="hidden" name="_subject" value="New portfolio message" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://mahmudamim.github.io/?sent=1" />
+
+              <div class="cform__row">
+                <label class="cfield">
+                  <span>Your name *</span>
+                  <input type="text" name="name" autocomplete="name"
+                         placeholder="Jane Doe" required />
+                </label>
+                <label class="cfield">
+                  <span>Email *</span>
+                  <input type="email" name="email" autocomplete="email"
+                         placeholder="jane@company.com" required />
+                </label>
+              </div>
+
+              <label class="cfield">
+                <span>Message *</span>
+                <textarea name="message" rows="5" required
+                          placeholder="Tell me a bit about your project, timeline and goals…"></textarea>
+              </label>
+
+              <div class="cform__footer">
+                <button type="submit" class="btn btn--accent cform__submit" id="submitBtn">
+                  <span class="cform__btn-text">Send message ✉️</span>
+                </button>
+                <span class="cform__hint">Usually replies within 24 hours</span>
+              </div>
+
+              <p class="cform__status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <aside class="contact__side">
+            <div class="contact__side-card reveal">
+              <h3>Prefer direct?</h3>
+              <a class="contact__side-link" href="mailto:mahmudauiux@gmail.com">mahmudauiux@gmail.com</a>
+              <a class="contact__side-link" href="tel:+08801862697337">+088 01862697337</a>
+            </div>
+
+            <div class="contact__side-card reveal">
+              <h3>Find me online</h3>
+              <ul class="contact__socials contact__socials--col">
+                <li><a href="https://www.linkedin.com/in/mahmuda-sultana-graphicuiuxdesigner" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                <li><a href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">Behance ↗</a></li>
+                <li><a href="https://www.fiverr.com/mahmudamim311" target="_blank" rel="noopener">Fiverr ↗</a></li>
+              </ul>
+            </div>
+
+            <p class="contact__note reveal">📍 Based in Rajshahi, Bangladesh — open to remote roles worldwide.</p>
+          </aside>
         </div>
       </div>
     </section>

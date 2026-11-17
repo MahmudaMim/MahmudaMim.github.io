@@ -102,6 +102,60 @@
     });
   }
 
+  /* ---------- Contact form (FormSubmit → email inbox) ---------- */
+  const form = document.getElementById("contactForm");
+  if (form) {
+    const status = document.getElementById("formStatus");
+    const btn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.classList.add("loading");
+      status.className = "cform__status";
+      status.textContent = "";
+
+      try {
+        const payload = Object.fromEntries(new FormData(form).entries());
+        const res = await fetch("https://formsubmit.co/ajax/mahmudauiux@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) !== "true") throw new Error("send failed");
+
+        form.reset();
+        status.textContent = "Message sent! I'll get back to you soon ✨";
+        status.classList.add("is-success");
+      } catch {
+        status.innerHTML =
+          'Oops — something went wrong. Please email me directly at ' +
+          '<a href="mailto:mahmudauiux@gmail.com">mahmudauiux@gmail.com</a>.';
+        status.classList.add("is-error");
+      } finally {
+        btn.disabled = false;
+        btn.classList.remove("loading");
+      }
+    });
+  }
+
+  /* ---------- Success page after non-AJAX fallback submit (?sent=1) ---------- */
+  const sentParam = new URLSearchParams(window.location.search).get("sent");
+  if (sentParam !== null) {
+    const s = document.getElementById("formStatus");
+    if (s) {
+      s.textContent = "Message sent! I'll get back to you soon ✨";
+      s.classList.add("is-success");
+    }
+    history.replaceState(null, "", window.location.pathname);
+  }
+
   /* ---------- Footer year ---------- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
