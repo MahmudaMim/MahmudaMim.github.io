@@ -120,12 +120,16 @@
       status.className = "cform__status";
       status.textContent = "";
 
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 45000); // never hang forever
+
       try {
         const payload = Object.fromEntries(new FormData(form).entries());
         const res = await fetch("https://formsubmit.co/ajax/mahmudauiux@gmail.com", {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify(payload),
+          signal: controller.signal,
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || String(data.success) !== "true") throw new Error("send failed");
@@ -135,10 +139,11 @@
         status.classList.add("is-success");
       } catch {
         status.innerHTML =
-          'Oops — something went wrong. Please email me directly at ' +
+          'Oops — something went wrong (or it took too long). Please email me directly at ' +
           '<a href="mailto:mahmudauiux@gmail.com">mahmudauiux@gmail.com</a>.';
         status.classList.add("is-error");
       } finally {
+        clearTimeout(timer);
         btn.disabled = false;
         btn.classList.remove("loading");
       }
