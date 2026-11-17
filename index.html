@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahmuda Sultana — UI/UX & Visual Designer</title>
+  <meta name="description" content="Portfolio of Mahmuda Sultana, UI/UX Designer & Visual/Graphic Designer from Rajshahi, Bangladesh. User research, interface design, branding and print." />
+  <meta property="og:title" content="Mahmuda Sultana — UI/UX & Visual Designer" />
+  <meta property="og:description" content="I design useful, attractive digital products. UI/UX & Visual Designer based in Rajshahi, Bangladesh." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo" aria-label="Mahmuda Sultana — home">
+        <span class="nav__logo-mark">MS</span>
+        <span class="nav__logo-text">Mahmuda<em>Sultana</em></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Awards</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--small nav__cta">
+        Let's talk
+        <span class="btn__dot" aria-hidden="true"></span>
+      </a>
+
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="mobile-menu__mail" href="mailto:mahmudauiux@gmail.com">mahmudauiux@gmail.com</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero__stickers" aria-hidden="true">
+        <span class="sticker sticker--one">Open to work <span class="blink">●</span></span>
+        <span class="sticker sticker--two">Rajshahi, BD 🇧🇩</span>
+        <span class="sticker sticker--three">Figma · Photoshop · Illustrator</span>
+        <svg class="hero__star hero__star--one" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 8.6L23 11l-8.6 2.4L12 22l-2.4-8.6L1 11l8.6-2.4z"/></svg>
+        <svg class="hero__star hero__star--two" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.4 8.6L23 11l-8.6 2.4L12 22l-2.4-8.6L1 11l8.6-2.4z"/></svg>
+      </div>
+
+      <div class="container">
+        <p class="hero__eyebrow reveal">Hi, I'm Mahmuda <span class="wave">👋</span></p>
+
+        <h1 class="hero__title reveal">
+          I design <em>useful</em>,<br />
+          <span class="hero__title-accent">attractive</span>
+          <span class="squiggle-wrap">
+            digital products
+            <svg class="squiggle" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M3 12 C 40 4, 70 16, 105 9 S 175 3, 210 11 S 275 6, 297 10" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+
+        <div class="hero__bottom reveal">
+          <p class="hero__sub">
+            UI/UX Designer &amp; Visual/Graphic Designer based in Rajshahi, Bangladesh.
+            I turn user research, interfaces and brand craft into products people
+            actually enjoy using — currently designing at <strong>Fiztar</strong>.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#work" class="btn btn--accent">
+              View my work
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v12m0 0l5-5m-5 5l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <button class="btn btn--ghost" id="copyEmail" data-email="mahmudauiux@gmail.com">
+              <span class="btn__label">mahmudauiux@gmail.com</span>
+              <span class="btn__done">Copied! ✓</span>
+            </button>
+          </div>
+        </div>
+
+        <ul class="hero__stats reveal" aria-label="Highlights">
+          <li><strong>3+</strong><span>Years of experience</span></li>
+          <li><strong>5+</strong><span>Apps designed</span></li>
+          <li><strong>2×</strong><span>Design champion</span></li>
+          <li><strong>4</strong><span>Companies &amp; clients</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>User Research</span><i>✦</i>
+        <span>Wireframing</span><i>✦</i>
+        <span>Prototyping</span><i>✦</i>
+        <span>Design Systems</span><i>✦</i>
+        <span>Usability Testing</span><i>✦</i>
+        <span>Branding</span><i>✦</i>
+        <span>Illustration</span><i>✦</i>
+        <span>Typography</span><i>✦</i>
+        <span>Social Media Design</span><i>✦</i>
+        <span>Print Design</span><i>✦</i>
+        <span>User Research</span><i>✦</i>
+        <span>Wireframing</span><i>✦</i>
+        <span>Prototyping</span><i>✦</i>
+        <span>Design Systems</span><i>✦</i>
+        <span>Usability Testing</span><i>✦</i>
+        <span>Branding</span><i>✦</i>
+        <span>Illustration</span><i>✦</i>
+        <span>Typography</span><i>✦</i>
+        <span>Social Media Design</span><i>✦</i>
+        <span>Print Design</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ================= WORK ================= -->
+    <section class="section" id="work">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__label"><span>01</span> Selected work</p>
+          <h2 class="section__title">Projects I've <em>shipped</em></h2>
+        </header>
+
+        <div class="work-grid">
+          <a class="work-card reveal" href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">
+            <div class="work-card__visual work-card__visual--a" aria-hidden="true">
+              <span class="work-card__glyph">📱</span>
+            </div>
+            <div class="work-card__meta">
+              <span class="tag">UI/UX · Mobile &amp; Web</span>
+              <span class="work-card__year">DappleSoft</span>
+            </div>
+            <h3 class="work-card__title">5+ application designs, wireframe to hi-fi</h3>
+            <p class="work-card__desc">Full-time UI/UX designer designing mobile and web applications for the company — plus graphic work for web and print.</p>
+            <span class="work-card__link">View on Behance <i>↗</i></span>
+          </a>
+
+          <a class="work-card reveal" href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">
+            <div class="work-card__visual work-card__visual--b" aria-hidden="true">
+              <span class="work-card__glyph">🖨️</span>
+            </div>
+            <div class="work-card__meta">
+              <span class="tag">Graphic Design · AI Support</span>
+              <span class="work-card__year">Fiztar — Present</span>
+            </div>
+            <h3 class="work-card__title">Web &amp; print materials for a global team</h3>
+            <p class="work-card__desc">Graphic designer for web and print materials at Fiztar (Nigeria), plus AI support — creating marketing and brand assets that ship.</p>
+            <span class="work-card__link">View on Behance <i>↗</i></span>
+          </a>
+
+          <a class="work-card reveal" href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">
+            <div class="work-card__visual work-card__visual--c" aria-hidden="true">
+              <span class="work-card__glyph">🌍</span>
+            </div>
+            <div class="work-card__meta">
+              <span class="tag">Freelance · Level-2 Seller</span>
+              <span class="work-card__year">Fiverr · 3 Years</span>
+            </div>
+            <h3 class="work-card__title">UI/UX for international clients</h3>
+            <p class="work-card__desc">Three years of freelance UI/UX design projects for clients around the world — from discovery and user flows to polished prototypes.</p>
+            <span class="work-card__link">View on Behance <i>↗</i></span>
+          </a>
+
+          <a class="work-card reveal" href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">
+            <div class="work-card__visual work-card__visual--d" aria-hidden="true">
+              <span class="work-card__glyph">🗂️</span>
+            </div>
+            <div class="work-card__meta">
+              <span class="tag">Contract · Graphic + UI/UX</span>
+              <span class="work-card__year">Digibox · 6 Months</span>
+            </div>
+            <h3 class="work-card__title">Contract design projects, end to end</h3>
+            <p class="work-card__desc">Completed contract-based graphic design and UI/UX projects — juggling brand, print and product work on tight timelines.</p>
+            <span class="work-card__link">View on Behance <i>↗</i></span>
+          </a>
+        </div>
+
+        <div class="work-more reveal">
+          <a class="btn btn--outline" href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">
+            See all work on Behance
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4m0 0H5m7 0v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section section--soft" id="about">
+      <div class="container about">
+        <header class="section__head reveal">
+          <p class="section__label"><span>02</span> About me</p>
+          <h2 class="section__title">Design that's <em>useful</em> first,<br />beautiful second</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__avatar reveal" aria-hidden="true">
+            <div class="about__avatar-face">MS</div>
+            <span class="sticker sticker--avatar">Drawing, reading &amp; DIY ✏️</span>
+          </div>
+
+          <div class="about__text reveal">
+            <p>
+              I'm a UI/UX and Visual Designer from Rajshahi, Bangladesh. I work where
+              <strong>user research, interface design and graphic design</strong> meet —
+              building digital products that are as useful as they are attractive.
+            </p>
+            <p>
+              Over the last few years I've designed <strong>5+ applications</strong> at
+              DappleSoft, delivered contract projects for Digibox, and helped international
+              clients on Fiverr as a Level-2 seller. Today I'm the UI/UX &amp; Graphic
+              Designer at <strong>Fiztar</strong>, while finishing my BSc in Computer
+              Science &amp; Engineering.
+            </p>
+            <p>
+              I care about clean flows, honest typography and details that hold up in
+              usability testing — not just in the mockup.
+            </p>
+
+            <ul class="about__facts">
+              <li><span>Based in</span> Rajshahi, Bangladesh 🇧🇩</li>
+              <li><span>Languages</span> Bengali (fluent) · English (professional)</li>
+              <li><span>Studying</span> BSc CSE, Varendra University</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__label"><span>03</span> Skills</p>
+          <h2 class="section__title">What I <em>bring</em> to the table</h2>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3><span class="skill-card__icon">🧭</span> UI/UX Design</h3>
+            <ul class="pills">
+              <li>User Research</li>
+              <li>Wireframing</li>
+              <li>Prototyping</li>
+              <li>User Flows</li>
+              <li>Design Systems</li>
+              <li>Responsive Web Design</li>
+              <li>Mobile App Design</li>
+              <li>Usability Testing</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3><span class="skill-card__icon">🎨</span> Visual &amp; Graphic Design</h3>
+            <ul class="pills">
+              <li>Illustration</li>
+              <li>Graphical Elements</li>
+              <li>Branding</li>
+              <li>Social Media Design</li>
+              <li>Print Design</li>
+              <li>Typography</li>
+              <li>Marketing Material</li>
+            </ul>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3><span class="skill-card__icon">🧰</span> Tools</h3>
+            <ul class="pills">
+              <li>Figma</li>
+              <li>FigJam</li>
+              <li>Adobe Photoshop</li>
+              <li>Adobe Illustrator</li>
+              <li>iOS &amp; iPadOS UI Kits</li>
+              <li>Visual Studio Code</li>
+              <li>Android Studio</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="section section--soft" id="experience">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__label"><span>04</span> Experience</p>
+          <h2 class="section__title">My <em>journey</em> so far</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <span class="timeline__dot timeline__dot--now" aria-hidden="true"></span>
+            <div class="timeline__body">
+              <div class="timeline__top">
+                <span class="tag tag--accent">Now</span>
+                <span class="timeline__date">Present</span>
+              </div>
+              <h3>UI/UX &amp; Graphic Designer</h3>
+              <p class="timeline__org">Fiztar · Nigeria</p>
+              <p class="timeline__desc">Graphic design for web and print materials, plus AI support — owning visual output across the brand.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <div class="timeline__body">
+              <div class="timeline__top">
+                <span class="tag">Freelance</span>
+                <span class="timeline__date">3 Years</span>
+              </div>
+              <h3>Level-2 UI/UX Designer</h3>
+              <p class="timeline__org">Fiverr · Freelance</p>
+              <p class="timeline__desc">UI/UX design projects for international clients — research, flows, wireframes and prototypes delivered end to end.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <div class="timeline__body">
+              <div class="timeline__top">
+                <span class="tag">Full-time</span>
+                <span class="timeline__date">1 Year</span>
+              </div>
+              <h3>Graphic &amp; UI/UX Designer</h3>
+              <p class="timeline__org">DappleSoft · Bangladesh</p>
+              <p class="timeline__desc">Full-time designer for web/print graphics and UI/UX for mobile &amp; web apps — designed 5+ applications for the company.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <span class="timeline__dot" aria-hidden="true"></span>
+            <div class="timeline__body">
+              <div class="timeline__top">
+                <span class="tag">Contract</span>
+                <span class="timeline__date">6 Months</span>
+              </div>
+              <h3>Graphic &amp; UI/UX Designer</h3>
+              <p class="timeline__org">Digibox · Bangladesh</p>
+              <p class="timeline__desc">Completed contract-based graphic design and UI/UX projects across brand and product.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= AWARDS ================= -->
+    <section class="section" id="awards">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__label"><span>05</span> Awards &amp; achievements</p>
+          <h2 class="section__title">A few <em>shiny</em> moments</h2>
+        </header>
+
+        <div class="awards-grid">
+          <article class="award-card reveal">
+            <span class="award-card__place award-card__place--gold">🏆 Champion</span>
+            <h3>Poster Design &amp; Presentation</h3>
+            <p>ROBO Spark 1.0 — RSVU</p>
+          </article>
+
+          <article class="award-card reveal">
+            <span class="award-card__place award-card__place--gold">🏆 Champion</span>
+            <h3>UI/UX Design Hackathon</h3>
+            <p>DCVU</p>
+          </article>
+
+          <article class="award-card reveal">
+            <span class="award-card__place">🥈 1st Runner-up</span>
+            <h3>University Innovation Hub Program</h3>
+            <p>National level</p>
+          </article>
+
+          <article class="award-card reveal">
+            <span class="award-card__place award-card__place--blue">🚀 Participant</span>
+            <h3>NASA Space Apps Challenge</h3>
+            <p>International</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="section section--soft" id="education">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="section__label"><span>06</span> Education &amp; training</p>
+          <h2 class="section__title">Always <em>learning</em></h2>
+        </header>
+
+        <div class="edu-grid">
+          <div class="edu-col reveal">
+            <h3 class="edu-col__title">Education</h3>
+            <ul class="edu-list">
+              <li>
+                <div>
+                  <strong>BSc in Computer Science &amp; Engineering</strong>
+                  <span>Varendra University</span>
+                </div>
+                <span class="edu-list__meta">2023 – Present · Running</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Diploma in Computer Engineering</strong>
+                  <span>Bangladesh Polytechnic Institute</span>
+                </div>
+                <span class="edu-list__meta">2022 · CGPA 3.79</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Secondary School Certificate (SSC)</strong>
+                  <span>Shahid Mamun Mahmud Police Lines School &amp; College</span>
+                </div>
+                <span class="edu-list__meta">2017 · GPA 5.00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="edu-col reveal">
+            <h3 class="edu-col__title">Courses &amp; trainings</h3>
+            <ul class="edu-list">
+              <li>
+                <div>
+                  <strong>Competency Based Training &amp; Assessment (Level-4)</strong>
+                  <span>National Skills Development Authority</span>
+                </div>
+                <span class="edu-list__meta">2025</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Graphics Design (Level 3)</strong>
+                  <span>National Skills Development Authority</span>
+                </div>
+                <span class="edu-list__meta">2024</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Graphics Design (Level 2)</strong>
+                  <span>Bangladesh Technical Education Board</span>
+                </div>
+                <span class="edu-list__meta">2023</span>
+              </li>
+              <li>
+                <div>
+                  <strong>UI &amp; UX Design</strong>
+                  <span>Shikhbe Sobai, Dhaka</span>
+                </div>
+                <span class="edu-list__meta">2022</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <p class="section__label reveal"><span>07</span> Contact</p>
+
+        <h2 class="contact__title reveal">
+          Let's create<br />
+          something <em>cool</em>
+          <span class="contact__spark" aria-hidden="true">🚀</span>
+        </h2>
+
+        <div class="contact__actions reveal">
+          <a class="btn btn--accent btn--big" href="mailto:mahmudauiux@gmail.com">
+            mahmudauiux@gmail.com
+          </a>
+          <a class="btn btn--ghost btn--big" href="tel:+08801862697337">
+            +088 01862697337
+          </a>
+        </div>
+
+        <div class="contact__card reveal">
+          <span class="sticker sticker--contact">Available for full-time &amp; freelance 🎉</span>
+          <p>Got a product, brand or print project in mind? I'd love to hear about it.</p>
+          <ul class="contact__socials">
+            <li><a href="https://www.linkedin.com/in/mahmuda-sultana-graphicuiuxdesigner" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://www.behance.net/mahmudasultana2" target="_blank" rel="noopener">Behance ↗</a></li>
+            <li><a href="https://www.fiverr.com/mahmudamim311" target="_blank" rel="noopener">Fiverr ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Mahmuda Sultana — made with lots of ☕ &amp; care</p>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
