@@ -505,22 +505,21 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 .work-card__visual--c { background: linear-gradient(135deg, #143d33, #1f8f6f); }
 .work-card__visual--d { background: linear-gradient(135deg, #453a12, #a88a1e); }
 
-/* image-based visual (case study cover) */
+/* image-based visual (case study cover) — fills the visible box, centered */
 .work-card__visual--img {
-  background: #fdfdfd;
-  padding: 14px;
+  background: #0d0b10;
+  padding: 0;
 }
 .work-card__visual--img::before { display: none; }
-/* absolutely fill the padded visual box so the image centers and never overflows */
 .work-card__visual--img img {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  width: calc(100% - 28px);
-  height: calc(100% - 28px);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   max-width: none;
-  object-fit: contain;
-  border-radius: 8px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 0;
   transition: transform 0.7s var(--ease);
 }
 .work-card:hover .work-card__visual--img img { transform: scale(1.04); }
