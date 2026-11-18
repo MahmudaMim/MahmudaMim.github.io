@@ -545,10 +545,22 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 }
 .work-card__year span { white-space: nowrap; }
 .work-card__logo {
-  height: 26px;
+  box-sizing: content-box;
+  height: 24px;
   width: auto;
-  max-width: 130px;
+  max-width: 140px;
   object-fit: contain;
+  background: #0d0b10;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+  padding: 6px 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s var(--ease);
+}
+.work-card:hover .work-card__logo {
+  border-color: rgba(214, 255, 62, 0.55);
+  box-shadow: 0 0 0 3px rgba(214, 255, 62, 0.14), 0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
 }
 
 .tag {
