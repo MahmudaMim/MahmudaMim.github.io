@@ -484,9 +484,9 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
 .work-card__visual {
   display: grid;
   place-items: center;
-  height: 170px;
+  height: clamp(240px, 26vw, 320px);
   border-radius: 16px;
-  font-size: 64px;
+  font-size: clamp(64px, 7vw, 88px);
   margin-bottom: 6px;
   position: relative;
   overflow: hidden;
@@ -511,10 +511,14 @@ button { font: inherit; cursor: pointer; background: none; border: none; color: 
   padding: 14px;
 }
 .work-card__visual--img::before { display: none; }
+/* absolutely fill the padded visual box so the image centers and never overflows */
 .work-card__visual--img img {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
+  max-width: none;
   object-fit: contain;
   border-radius: 8px;
   transition: transform 0.7s var(--ease);
